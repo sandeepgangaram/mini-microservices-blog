@@ -12,7 +12,7 @@ app.get("/posts", (req, res) => {
 });
 
 app.post("/posts", (req, res) => {
-  const title = req.body;
+  const { title } = req.body;
   const id = randomBytes(4).toString("hex");
 
   posts[id] = {
