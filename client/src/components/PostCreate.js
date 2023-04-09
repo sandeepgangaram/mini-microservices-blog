@@ -1,12 +1,15 @@
 const PostCreate = () => {
   return (
-    <form className="form">
-      <div>
-        <label>Title</label>
-        <input className="form-control" />
-      </div>
-      <button className="btn btn-primary">Submit</button>
-    </form>
+    <div>
+      <h2>Create Post</h2>
+      <form>
+        <div className="form-group">
+          <label>Title</label>
+          <input className="form-control" />
+        </div>
+        <button className="btn btn-primary">Submit</button>
+      </form>
+    </div>
   );
 };
 
