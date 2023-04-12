@@ -11,15 +11,17 @@ app.post("/events", async (req, res) => {
   if (type === "CommentCreated") {
     let status = data.content.includes("orange") ? "rejected" : "approved";
 
-    await axios.post("http://localhost:8005/events", {
-      type: "CommentModerated",
-      data: {
-        id: data.id,
-        content: data.content,
-        postId: data.postId,
-        status,
-      },
-    });
+    setTimeout(async () => {
+      await axios.post("http://localhost:8005/events", {
+        type: "CommentModerated",
+        data: {
+          id: data.id,
+          content: data.content,
+          postId: data.postId,
+          status,
+        },
+      });
+    }, 3000);
   }
 
   res.send({ status: "OK" });
